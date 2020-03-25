@@ -1,0 +1,11 @@
+EM-Project
+===========
+
+Simulate economies, war, plagues (and other apocalyptic scenarios!),
+and the evolution and expansion of an intelligent race.
+
+Allow simulations with various technology
+settings/starting points for the inhabitants.
+
+Procedurely formed cities, within a realistic generated world with
+dynamic environmental attributes.

@@ -1,0 +1,68 @@
+|||
+-----------
+===TO-DO===
+-----------
+
+** Solve tiling issues (first in alt-test)
+	--> look at references.
+
+** Create "planet"
+	That is, it loops around seamlessly along x axis.
+	Create ocean with "sea level".
+	Inhabit planet with climates, lakes, rivers, mountains, etc.
+
+**
+___________
+|||
+-----------
+===DESIGN===
+-----------
+
+**World
+	Holds high-level information about the planet. WorldTiles.
+	Seasonal/time objects.
+
+**WorldTile
+	A tile on the world. Representing some dimension of land/water
+	mass. Contains base climate.
+
+**World Generation
+	.
+
+**Time
+	Logs time and tracks seasons, if they are enabled.
+____________
+|||
+--------------
+===FEATURES===
+--------------
+
+** Easy-to-use config files
+For configuration of variables inside the
+project. That way it isn't required to go into the options and set a
+million variables if you don't want to for new simulation running.
+
+**
+______________
+|||
+     ---  ---  ---
+{{{ |ETC||ETC||ETC| }}}
+     ---  ---  ---
+
+
+    /*
+        -CLASS NAME-
+            Class description...
+    */
+    #pragma once
+
+    //
+
+
+    class ClassName {
+    protected:
+
+    public:
+        ClassName(); //Constructor
+
+    };
