@@ -68,12 +68,12 @@
                 PerlinNoise::surflet(x, y, period, intX+0, intY+1) + PerlinNoise::surflet(x, y, period, intX+1, intY+1) );
     }
 
-    double PerlinNoise::aNoise(double x, double y, int per, int octs) {
+    double PerlinNoise::aNoise(double x, double y, int period, int octaves) {
         double val = 0;
 
-        for (int i = 0; i < octs; i++) {
+        for (int i = 0; i < octaves; i++) {
             double scal = pow(2, i);
-            val += pow(0.5, i) * noise(x*scal, y*scal, per*scal);
+            val += pow(0.5, i) * noise(x*scal, y*scal, period*scal);
         }
 
         return val;

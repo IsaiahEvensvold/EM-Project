@@ -1,15 +1,16 @@
+    #pragma once
     /*
         -WORLD GENERATION-
             ...
     */
-    #pragma once
 
-    //
+    //#include <>
 
 
     class WorldGeneration {
+
     protected:
-        WorldGeneration(); //Static class, no object creation
+        WorldGeneration(); // Static class
 
     public:
 

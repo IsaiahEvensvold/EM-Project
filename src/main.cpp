@@ -21,24 +21,6 @@
     #include "perlin_noise.h"
 
 
-    void test() {
-        int tsize = 30;
-        PerlinNoise* pn = new PerlinNoise(256);
-        double freq = 0.125;
-
-        for (int i = 0; i < tsize; i++) { //y
-
-            for (int j = 0; j < tsize; j++) { //x
-                double tsf = tsize * freq / 2;
-                int tsff = tsf;
-
-                double n = pn->noise(j*freq, i*freq, tsff);
-                n = floor(n * 100);
-            }
-        }
-
-    }
-
     std::vector< std::vector< double > > screenTest() {
         int tsize = 256;
         PerlinNoise* pn = new PerlinNoise(256);
@@ -51,9 +33,6 @@
         for(int i = 0; i < tsize; i++)
             testVec[i].resize(tsize);
 
-
-        double maxx = 0;
-        double minn = 1;
         for (int i = 0; i < tsize; i++) { //y
 
             for (int j = 0; j < tsize; j++) { //x
@@ -78,10 +57,10 @@
         TCODColor colWorldBlue = COLORWorldBlue;
         TCODColor colWorldGreen = COLORWorldGreen;
 
-        int testWidth = 256;
-        int testHeight = 200;
-
-        test();
+        int testWidth = 256;//256
+        int testHeight = 200;//200
+        em::setTcodConsoleWidth(testWidth);
+        em::setTcodConsoleHeight(testHeight);
 
         std::vector< std::vector< double > > cVal = screenTest();
 
@@ -111,7 +90,7 @@
 
         /* Initialize the LIBTCOD console */
         TCODConsole::setCustomFont("babyterminal.png"); // Set font to smaller tiles, improving the potential map size
-        TCODConsole::initRoot(testWidth, testHeight, "EM Project", false);
+        TCODConsole::initRoot(em::getTcodConsoleWidth(), em::getTcodConsoleHeight(), "EM Project", false);
 
 
         while ( !TCODConsole::isWindowClosed() ) {

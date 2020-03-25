@@ -49,17 +49,17 @@ ______________
 {{{ |ETC||ETC||ETC| }}}
      ---  ---  ---
 
-
+    #pragma once
     /*
         -CLASS NAME-
             Class description...
     */
-    #pragma once
 
-    //
+    //#include <>
 
 
     class ClassName {
+
     protected:
 
     public:

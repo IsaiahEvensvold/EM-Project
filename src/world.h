@@ -1,21 +1,22 @@
+    #pragma once
     /*
         -WORLD-
             ...
     */
-    #pragma once
 
-    //
+
     #include <vector>
 
 
     class WorldTile;
 
     class World {
+
     protected:
 
     public:
-        World(); //Constructor
+        World();
 
-        std::vector< WorldTile* > worldTiles;
+        std::vector< std::vector< WorldTile*> > worldTiles;
 
     };

@@ -1,13 +1,14 @@
+    #pragma once
     /*
         -WORLD TILE-
-            ...
+            Class description...
     */
-    #pragma once
 
-    //
+    //#include <>
 
 
     class WorldTile {
+
     protected:
 
     public:
