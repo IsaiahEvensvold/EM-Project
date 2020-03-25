@@ -1,0 +1,17 @@
+Tags
+====
+format: @TAG -- Descriptive explanation
+
+// @TODO
+Put on the to-do list.
+// @FIX
+To be fixed at [PENDING...].
+// @HACK
+Hacky solution.
+// @FEATURE
+Possible future feature to be implemented.
+
+
+Returns
+=======
+-42: em::RETURN_CONTRADICTION: Explicit contradiction.

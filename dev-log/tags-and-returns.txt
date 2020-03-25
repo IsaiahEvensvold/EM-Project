@@ -1,0 +1,13 @@
+Tags
+====
+// #TODO
+// #FIX
+// #HACK
+
+
+
+
+
+Returns
+=======
+-42: Explicit contradiction.

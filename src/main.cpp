@@ -1,16 +1,24 @@
-    /*  EM-Project
-             -Isaiah Evensvold */
+    /************************************************************
+    **
+    **  EM-Project
+    **
+    **      designed and programmed by Isaiah Evensvold
+    **
+    ***********************************************************/
+
+
+    #include <libtcod.hpp> // LIBTCod Library
+    #include "em.h"        // EM master class
 
     #include <iostream>
-    #include <libtcod.hpp>
-    #include <cmath>
     #include <vector>
+
+    #include <cmath>        /* floor */
+    #include <stdlib.h>     /* srand, rand */
+    #include <time.h>       /* time */
 
     #include "world.h"
     #include "perlin_noise.h"
-
-    #include <stdlib.h>     /* srand, rand */
-    #include <time.h>       /* time */
 
 
     void test() {
@@ -26,27 +34,16 @@
 
                 double n = pn->noise(j*freq, i*freq, tsff);
                 n = floor(n * 100);
-                //std::cout << n << " ";
             }
-            //std::cout << std::endl;
         }
 
     }
-
-
-
-
-    /*size, freq, octs, data = 128, 1/32.0, 5, []
-    for y in range(size):
-        for x in range(size):
-            data.append(fBm(x*freq, y*freq, int(size*freq), octs))*/
-
 
     std::vector< std::vector< double > > screenTest() {
         int tsize = 256;
         PerlinNoise* pn = new PerlinNoise(256);
         double freq = 1/64.0; //1/64.0
-        int octs = 5; //10
+        int octs = 5; //5
 
         std::vector< std::vector<double> > testVec;
         testVec.resize(tsize);
@@ -63,22 +60,11 @@
                 double tsf = tsize * freq;
                 int tsff = tsf;
 
-                //double n = pn->noise(j*freq, i*freq, tsff);
-                double n = pn->noiseO(j*freq, i*freq, tsff, 5);
+                double n = pn->aNoise(j*freq, i*freq, tsff, octs);
 
                 testVec[j][i] = n;
-
-                if (n > maxx)
-                    maxx = n;
-
-                if (n < minn)
-                    minn = n;
-
-                //std::cout << n << std::endl;
             }
         }
-
-        std::cout << "MAX: " << maxx << std::endl << "MIN" << minn;
 
         return testVec;
     }
@@ -123,11 +109,8 @@
         double submergedDepth = 0.35 * criticalMagnitude;
         double landHeight = 0.5 * criticalMagnitude;
 
-        /* initialize random seed: */
-        srand (time(NULL));
-
         /* Initialize the LIBTCOD console */
-        TCODConsole::setCustomFont("babyterminal.png");
+        TCODConsole::setCustomFont("babyterminal.png"); // Set font to smaller tiles, improving the potential map size
         TCODConsole::initRoot(testWidth, testHeight, "EM Project", false);
 
 
