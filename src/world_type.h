@@ -1,17 +1,17 @@
     #pragma once
     /*
-        -WORLD TILE-
+        -WORLD TYPE-
             Class description...
     */
 
     //#include <>
 
 
-    class WorldTile {
+    class WorldType {
 
     protected:
 
     public:
-        WorldTile(); // Constructor
+        WorldType(); // Constructor
 
     };

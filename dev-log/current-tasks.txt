@@ -1,0 +1,10 @@
+* last file working in
+======================
+--world_generation.cpp
+
+
+
+* tasks
+=======
+--World Typing, how it's all going to work
+--Get all my notepads set up in atom to have open :))

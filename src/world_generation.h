@@ -1,18 +1,22 @@
     #pragma once
     /*
         -WORLD GENERATION-
-            ...
+            Static class. Handles generation of worlds, interfacing noise functions.
     */
 
-    //#include <>
+    #include <vector>
+    #include <string>
 
+
+    class World;
+    class WorldType;
 
     class WorldGeneration {
 
     protected:
-        WorldGeneration(); // Static class
+        WorldGeneration();
 
     public:
-
+        static World* generateWorld(std::string name, WorldType worldType);
 
     };

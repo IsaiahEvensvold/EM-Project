@@ -31,6 +31,8 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="src/em.cpp" />
+		<Unit filename="src/em.h" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/perlin_noise.cpp" />
 		<Unit filename="src/perlin_noise.h" />
@@ -38,6 +40,10 @@
 		<Unit filename="src/world.h" />
 		<Unit filename="src/world_generation.cpp" />
 		<Unit filename="src/world_generation.h" />
+		<Unit filename="src/world_tile.cpp" />
+		<Unit filename="src/world_tile.h" />
+		<Unit filename="src/world_type.cpp" />
+		<Unit filename="src/world_type.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

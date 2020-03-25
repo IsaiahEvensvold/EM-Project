@@ -4,3 +4,10 @@
     World::World() {
 
     }
+
+
+
+
+    void World::setName(std::string n) {
+        name = n;
+    }

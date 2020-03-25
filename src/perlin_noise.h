@@ -18,9 +18,9 @@
         std::vector<double> dirsX;
         std::vector<double> dirsY;
 
-        int maxPeriod_m;
-        bool periodX_m; // Toggles whether or not x,y will be repeated using a period. Note that they will use the SAME period value.
-        bool periodY_m; // These values default to X period->true, and Y period->false.
+        int maxPeriod;
+        bool periodX; // Toggles whether or not x,y will be repeated using a period. Note that they will use the SAME period value.
+        bool periodY; // These values default to X period->true, and Y period->false.
                         // @FEATURE -- Possible implementation of separate periods for X and Y, might come in handy if I end up using a lot of noise.
 
     public:

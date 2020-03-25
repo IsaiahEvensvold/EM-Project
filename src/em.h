@@ -2,6 +2,7 @@
     /*
         -EM-
             Master class for EM-Project, containing many useful and reusable methods.
+            Static class.
     */
 
 

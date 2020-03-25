@@ -63,6 +63,6 @@ ______________
     protected:
 
     public:
-        ClassName(); //Constructor
+        ClassName(); // Constructor
 
     };

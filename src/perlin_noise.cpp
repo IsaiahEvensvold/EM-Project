@@ -12,25 +12,25 @@
 
 
 
-    PerlinNoise::PerlinNoise(int maxPeriod, int seed, bool periodX, bool periodY) {
-        maxPeriod_m = maxPeriod;
-        periodX_m = periodX;
-        periodY_m = periodY;
+    PerlinNoise::PerlinNoise(int _maxPeriod, int seed, bool _periodX, bool _periodY) {
+        maxPeriod = _maxPeriod;
+        periodX = _periodX;
+        periodY = _periodY;
 
-        perm.resize(maxPeriod_m);
+        perm.resize(maxPeriod);
         std::iota(perm.begin(), perm.end(), 0);
         std::default_random_engine engine(seed);
         std::shuffle(perm.begin(), perm.end(), engine);
         perm.insert(perm.end(), perm.begin(), perm.end());
 
-        dirsX.resize(maxPeriod_m);
-        dirsY.resize(maxPeriod_m);
+        dirsX.resize(maxPeriod);
+        dirsY.resize(maxPeriod);
 
-        for (int i = 0; i < maxPeriod_m; i++)
-            dirsX[i] = cos(i * 2.0 * M_PI / maxPeriod_m);
+        for (int i = 0; i < maxPeriod; i++)
+            dirsX[i] = cos(i * 2.0 * M_PI / maxPeriod);
 
-        for (int i = 0; i < maxPeriod_m; i++)
-            dirsY[i] = sin(i * 2.0 * M_PI / maxPeriod_m);
+        for (int i = 0; i < maxPeriod; i++)
+            dirsY[i] = sin(i * 2.0 * M_PI / maxPeriod);
     }
 
     double PerlinNoise::surflet(double x, double y, int period, double gridX, double gridY) {
@@ -46,9 +46,9 @@
         int updGridX = (int)gridX;
         int updGridY = (int)gridY;
 
-        if (periodX_m)
+        if (periodX)
             updGridX = updGridX%period;
-        if (periodY_m)
+        if (periodY)
             updGridY = updGridY%period;
         /* --IE-- */
 
@@ -58,7 +58,7 @@
     }
 
     double PerlinNoise::noise(double x, double y, int period) {
-        if (period > maxPeriod_m)
+        if (period > maxPeriod)
             em::exitError("perlin_noise.cpp", "PerlinNoise::noise", "Period inputted is greater than this noise object's maximum period.", em::RETURN_CONTRADICTION);
 
         int intX = (int)x;
